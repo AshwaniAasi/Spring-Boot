@@ -22,19 +22,12 @@ import org.springframework.web.bind.annotation.RestController;
 import com.restbook.entity.Book;
 import com.restbook.service.BookSerivce;
 
-//@Controller
+
 @RestController
 public class BookController {
 	@Autowired
 	private BookSerivce bookSerivce;
 
-//	@RequestMapping(value = "/books", method = RequestMethod.GET)
-//	@ResponseBody
-//	@GetMapping("/books")
-//	public List<Book> getAllBook()
-//	{
-//		return bookSerivce.getAllBooks();
-//	}
 	@GetMapping("/books")
 	public ResponseEntity<List<Book>> getAllBook() {
 		List<Book> list = this.bookSerivce.getAllBooks();
