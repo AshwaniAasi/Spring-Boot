@@ -1,0 +1,18 @@
+package com.jpa.test.dao;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.data.repository.CrudRepository;
+
+import com.jpa.test.entity.User;
+
+public interface UserReposistory extends CrudRepository<User, Integer> 
+{
+	public List<User> findByName(String name);
+	
+	public Optional<User> findById(Integer id);
+	
+	public List<User> findByNameAndCity(String name, city);
+
+}

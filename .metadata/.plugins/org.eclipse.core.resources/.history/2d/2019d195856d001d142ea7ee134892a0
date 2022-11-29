@@ -1,0 +1,67 @@
+package com.jpa.test;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.ConfigurableApplicationContext;
+
+import com.jpa.test.dao.UserReposistory;
+import com.jpa.test.entity.User;
+
+@SpringBootApplication
+public class BootjpaexampleApplication {
+
+	public static void main(String[] args) {
+		ApplicationContext context = SpringApplication.run(BootjpaexampleApplication.class, args);
+		
+		UserReposistory userReposistory = context.getBean(UserReposistory.class);
+		/*
+		User s1=new User();
+		s1.setName("Ashwani Kumar Chaurasiya");
+		s1.setCity("Azamgarh");
+		s1.setStatus("Student");
+		
+		User save1 = userReposistory.save(s1); //for single save object
+		System.out.println(save1);
+		*/
+		
+		/*
+		User s2=new User();
+		s2.setName("Ankit Chaurasiya");
+		s2.setCity("Kisunpur, Azamgarh");
+		s2.setStatus("Beautiful");
+	
+		User s3=new User();
+		s3.setName("Rani Chaurasiya");
+		s3.setCity("Pambar, Azamgarh");
+		s3.setStatus("D pharma");
+		
+		List<User> users = List.of(s2, s3); // java 9 features but in java 8 need to create ArrayList
+		
+		 Iterable<User> userIt= userReposistory.saveAll(users);  //save all objects by Itreble Class
+		 
+		 userIt.forEach(user->{System.out.println(user);});
+		*/
+		
+		// for edit any entry
+		
+		Optional<User> optional = userReposistory.findById(2);
+		
+		User user = optional.get(); // get single data from DB
+		
+		System.out.println(user);
+//		User [id=2, name=Ankit Chaurasiya, city=Kisunpur, Azamgarh, status=Beautiful]
+		
+		user.setCity("Mau");
+		
+		System.out.println(user);
+//		User [id=2, name=Ankit Chaurasiya, city=Mau, status=Beautiful]
+		
+		userReposistory.save(user);
+		
+	}
+
+}

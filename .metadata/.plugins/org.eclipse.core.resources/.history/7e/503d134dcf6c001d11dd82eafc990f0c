@@ -1,0 +1,10 @@
+package com.firstTime.Controller;
+
+public class TestController {
+	
+	public Stirng firstHandler()
+	{
+		return "Just for Testing";
+	}
+
+}

@@ -1,0 +1,12 @@
+package com.devtool.controller;
+
+public class TestController {
+	
+	public String test()
+	{
+		int a=67;
+		int b=89;
+		return "this is just testing/t sum of a and b is : " (a+b);
+	}
+
+}

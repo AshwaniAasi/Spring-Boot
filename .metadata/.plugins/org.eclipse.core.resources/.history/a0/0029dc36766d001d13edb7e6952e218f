@@ -1,0 +1,5 @@
+package com.firstTime.entites;
+
+public class User {
+
+}

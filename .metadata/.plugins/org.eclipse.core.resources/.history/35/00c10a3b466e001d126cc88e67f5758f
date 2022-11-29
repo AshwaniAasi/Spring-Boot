@@ -1,0 +1,16 @@
+package com.restbook.controller;
+
+import java.util.List;
+
+import com.restbook.entity.Book;
+import com.restbook.service.BookSerivce;
+
+public class BookController 
+{
+	private BookSerivce bookSerivce;
+	
+	public List<Book> getAllBook()
+	{
+		return bookSerivce.getAllBooks();
+	}
+}

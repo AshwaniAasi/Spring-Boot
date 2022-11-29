@@ -1,0 +1,28 @@
+package com.restbook.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.restbook.entity.Book;
+import com.restbook.service.BookSerivce;
+
+@Controller
+public class BookController 
+{
+	@Autowired
+	private BookSerivce bookSerivce;
+	
+	@RequestMapping("/books")
+	public List<Book> getAllBook()
+	{
+		return bookSerivce.getAllBooks();
+	}
+	
+	public Book getSingleBook(int id)
+	{
+		return bookSerivce.getBookById(id);
+	}
+}

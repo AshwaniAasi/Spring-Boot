@@ -1,0 +1,13 @@
+package com.restbook.service;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import com.restbook.entity.Book;
+
+public class BookSerivce
+{
+	List<Book> list= new ArrayList<Book>();
+	
+	
+}

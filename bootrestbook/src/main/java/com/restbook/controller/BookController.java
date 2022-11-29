@@ -22,7 +22,6 @@ import org.springframework.web.bind.annotation.RestController;
 import com.restbook.entity.Book;
 import com.restbook.service.BookSerivce;
 
-
 @RestController
 public class BookController {
 	@Autowired
@@ -77,8 +76,6 @@ public class BookController {
 		} catch (Exception e) {
 			e.printStackTrace();
 			return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
-			
 		}
 	}
-
 }

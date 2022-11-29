@@ -1,0 +1,5 @@
+package com.restbook.entity;
+
+public class Book {
+
+}

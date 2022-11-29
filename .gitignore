@@ -1,1 +1,5 @@
-/.metadata/
+
+*.xml
+.metadata/.plugins/org.eclipse.core.resources/.history/6c/107b45e27c6d001d142ea7ee134892a0
+*.ini
+.metadata/.plugins/org.jboss.tools.usage/events/eeb18b4f-68f5-303e-b4c6-ccedfab5f7b1

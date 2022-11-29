@@ -1,0 +1,8 @@
+package com.restbook.service;
+
+import com.restbook.entity.Book;
+
+public class BookSerivce
+{
+	Book b1=new Book(10, "Java Course", "Ashwani");
+}

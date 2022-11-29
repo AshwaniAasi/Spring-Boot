@@ -9,44 +9,38 @@ import com.restbook.dao.BookRepository;
 import com.restbook.entity.Book;
 
 @Service
-public class BookSerivce
-{
+public class BookSerivce {
 	@Autowired
 	private BookRepository bookRepository;
-		
-	//get all books
-	public List<Book> getAllBooks()
-	{
-		List<Book> findAll = (List<Book>)this.bookRepository.findAll();
+
+	// get all books
+	public List<Book> getAllBooks() {
+		List<Book> findAll = (List<Book>) this.bookRepository.findAll();
 		return findAll;
 	}
-	
+
 	// get single book by id
-	public Book getBookById(int id)
-	{		
+	public Book getBookById(int id) {
 		Book findById = this.bookRepository.findById(id);
-		
+
 		return findById;
 	}
-	
+
 	// adding the book
-	public Book addBook(Book b)
-	{
+	public Book addBook(Book b) {
 		Book save = this.bookRepository.save(b);
 		return save;
 	}
-	
+
 //	deleting book
-	public void deleteBook(int id)
-	{
+	public void deleteBook(int id) {
 		this.bookRepository.deleteById(id);
 	}
-	
-	//update Book
-	public void updateBook(Book book, int id)
-	{
+
+	// update Book
+	public void updateBook(Book book, int id) {
 		book.setId(id);
 		bookRepository.save(book);
 	}
-	
+
 }

@@ -1,0 +1,28 @@
+package com.jpa.test.dao;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.CrudRepository;
+
+import com.jpa.test.entity.User;
+
+public interface UserReposistory extends CrudRepository<User, Integer> 
+{
+	// Custom Finder method
+	public List<User> findByName(String name);
+	public Optional<User> findById(Integer id);
+	public List<User> findByNameAndCity(String name, String city);
+	
+	
+	// Executing JPQL & Native QL
+	@Query("select u from User u")
+	public List<User> getAllUsers();
+//		User [id=1, name=Ashutosh, city=Lucknow, status=Polytechnic]
+//		User [id=2, name=Ankit Chaurasiya, city=Mau, status=Beautiful]
+//		User [id=3, name=Rani Chaurasiya, city=Pambar, Azamgarh, status=D pharma]
+	
+	
+
+}

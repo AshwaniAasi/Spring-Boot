@@ -1,0 +1,13 @@
+package com.firstTime.Controller;
+
+import org.springframework.stereotype.Controller;
+
+@Controller
+public class TestController {
+	
+	public String firstHandler()
+	{
+		return "Just for Testing";
+	}
+
+}

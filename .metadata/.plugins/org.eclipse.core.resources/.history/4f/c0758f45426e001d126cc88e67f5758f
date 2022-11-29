@@ -1,0 +1,5 @@
+package com.restbook.service;
+
+public class BookService {
+
+}
