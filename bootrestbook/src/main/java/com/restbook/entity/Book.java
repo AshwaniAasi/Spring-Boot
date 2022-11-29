@@ -1,11 +1,24 @@
 package com.restbook.entity;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
+@Entity
+@Table(name="books")
 public class Book 
 {
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
+	@Column(name="book_title")
 	private String title;
+	@Column(name="book_author")
 	private String author;
+	
 	public int getId() {
 		return id;
 	}

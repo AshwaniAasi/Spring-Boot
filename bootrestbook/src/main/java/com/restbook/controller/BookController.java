@@ -35,7 +35,7 @@ public class BookController {
 		if (list.size() <= 0) {
 			return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
 		} else
-			return ResponseEntity.of(Optional.of(list));
+			return ResponseEntity.status(HttpStatus.OK).body(list);
 	}
 
 	@GetMapping("/books/{id}")
@@ -62,7 +62,7 @@ public class BookController {
 	public ResponseEntity<Void> deleteBook(@PathVariable("bookId") int bookId) {
 		try {
 			this.bookSerivce.deleteBook(bookId);
-			return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
+			return ResponseEntity.status(HttpStatus.ACCEPTED).build();
 		} catch (Exception e) {
 			e.printStackTrace();
 			return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
