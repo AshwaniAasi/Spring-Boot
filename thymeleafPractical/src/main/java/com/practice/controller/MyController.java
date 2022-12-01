@@ -41,9 +41,15 @@ public class MyController
 		m.addAttribute("isActive", true);
 		m.addAttribute("isActive", false);
 		*/
-			
+		
+		/*
 		m.addAttribute("gender", "F");
 //		m.addAttribute("gender", "M");
+		*/
+		
+//		List<Integer> list = List.of(); //zero
+		List<Integer> list = List.of(25,45,15,145,45,73); //more than one
+		m.addAttribute("myList", list);
 		
 		return "condition";
 	}

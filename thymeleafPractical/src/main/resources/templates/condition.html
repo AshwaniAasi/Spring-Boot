@@ -12,9 +12,15 @@
 	<!-- <h1>User is <span th:style="${ isActive } ? 'color:green' : 'color:red' "	th:text="${ isActive } ? 'Active' : 'Not Active' "></span></h1> -->
 
 	<!-- If - Unless -->
-	<h1 th:if="${ gender}=='M'">Male</h1>
-	<h1 th:unless="${ gender }=='M'">Female</h1>
+<!--	<h1 th:if="${ gender}=='M'">Male</h1>
+	<h1 th:unless="${ gender }=='M'">Female</h1> -->
 
+<!-- switch - case -->
+<div th:switch="${#lists.size(myList)}">
+	<h1 th:case="0">List contained zero elements</h1>
+	<h1 th:case="1">List contained 1 elements</h1>
+	<h1 th:case="*">List contained more the 1 elements</h1>
+</div>
 
 </body>
 </html>
