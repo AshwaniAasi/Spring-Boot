@@ -1,5 +1,6 @@
 package com.practice.controller;
 
+import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.List;
 
@@ -37,13 +38,8 @@ public class MyController
 	public String conditionHandler(Model m)
 	{
 		System.out.println("Conditional handler executed");
-		/*
-		m.addAttribute("isActive", true);
-		m.addAttribute("isActive", false);
-		*/
-		
+	
 		m.addAttribute("gender", "F");
-//		m.addAttribute("gender", "M");
 		
 		List<Integer> list = List.of(25,45,15,145,45,73);
 		m.addAttribute("list", list);
@@ -55,6 +51,9 @@ public class MyController
 	@GetMapping("/service")
 	public String serviceHandler(Model m)
 	{
+		m.addAttribute("title", "My Country India");
+		m.addAttribute("substitle", LocalDateTime.now().toString());
 		return "service";
 	}
+	
 }

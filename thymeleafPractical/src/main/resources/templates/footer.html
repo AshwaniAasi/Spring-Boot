@@ -5,11 +5,11 @@
 	<title>FooterTemplate</title>
 </head>
 <body>
-	<footer id="fragmentTag" th:fragment="footer1">
+	<footer id="fragmentTag" th:fragment="footer1(title, substitle)">
 		<div class="container" >
-			<h2>About Learn code with durgesh</h2>
-			<h2>Provide Good content </h2>
-			<p> loremfdgdf,d gerhgd dgdfh dfgd dfgf wtwfndv </p>
+			<h3 th:text="${title}"></h3>
+			<h3 th:text="${substitle}"></h3>
+		
 		</div>
 	</footer>
 </body>
