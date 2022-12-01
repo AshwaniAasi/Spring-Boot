@@ -36,9 +36,15 @@ public class MyController
 	@GetMapping("/condition")
 	public String conditionHandler(Model m)
 	{
-//		m.addAttribute("isActive", true);
-		m.addAttribute("isActive", false);
 		System.out.println("Conditional handler executed");
+		/*
+		m.addAttribute("isActive", true);
+		m.addAttribute("isActive", false);
+		*/
+			
+		m.addAttribute("gender", "F");
+//		m.addAttribute("gender", "M");
+		
 		return "condition";
 	}
 }
